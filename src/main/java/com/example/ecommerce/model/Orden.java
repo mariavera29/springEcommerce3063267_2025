@@ -25,11 +25,11 @@ public class Orden {
 	private Usuario usuario;
 	
 	@OneToMany(mappedBy = "orden")
-	private List<DetalleOrden> datalle;
+	private List<DetalleOrden> detalle;
 	
 //constructor vacio
 	public Orden() {
-		super();
+	
 	}
 //constructor con campos
 	public Orden(Integer id, String numero, Date fechacreacion, Date fecharecibida, Double total) {
@@ -90,11 +90,11 @@ public class Orden {
 	}
 
 	public List<DetalleOrden> getDatalle() {
-		return datalle;
+		return detalle;
 	}
 
 	public void setDatalle(List<DetalleOrden> datalle) {
-		this.datalle = datalle;
+		this.detalle = datalle;
 	}
 
 	
