@@ -1,15 +1,12 @@
 package com.example.ecommerce.model;
 
 import java.util.List;
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
 
 // anotaciones jpa
 @Entity
@@ -133,6 +130,5 @@ public class Usuario {
 				+ ", direccion=" + direccion + ", documento=" + documento + ", telefono=" + telefono + ", password="
 				+ password + ", tipo=" + tipo + "]";
 	}
-	
 	
 }

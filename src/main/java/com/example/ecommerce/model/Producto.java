@@ -1,7 +1,4 @@
 package com.example.ecommerce.model;
-
-import org.hibernate.annotations.ManyToAny;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,12 +21,9 @@ public class Producto {
 	
 	@ManyToOne
 	private Usuario usuario;
-
-
 	public Producto() {
 		
 	}
-
 	public Producto(Integer id, String nombre, String descripcion, String imagen, Double precio, Integer cantidad,
 			Usuario usuario) {
 		super();
@@ -104,9 +98,4 @@ public class Producto {
 				+ ", precio=" + precio + ", cantidad=" + cantidad + "]";
 	}
 	
-	
-
-	
-	
-
 }

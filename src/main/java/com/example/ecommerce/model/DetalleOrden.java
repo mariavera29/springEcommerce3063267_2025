@@ -25,7 +25,6 @@ public class DetalleOrden {
 	@ManyToOne
 	private Producto productos;
 	
-	
 	//constructor vacio
 	public DetalleOrden() {
 	
@@ -71,58 +70,36 @@ public class DetalleOrden {
 	public void setCantidad(Double cantidad) {
 		this.cantidad = cantidad;
 	}
-
-
 	public Double getPrecio() {
 		return precio;
 	}
-
 
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
 
-
 	public Double getTotal() {
 		return total;
 	}
 
-
 	public void setTotal(Double total) {
 		this.total = total;
 	}
-
-
 	public Orden getOrden() {
 		return orden;
 	}
-
-
 	public void setOrden(Orden orden) {
 		this.orden = orden;
 	}
-
-
 	public Producto getProductos() {
 		return productos;
 	}
-
-
 	public void setProductos(Producto productos) {
 		this.productos = productos;
 	}
-
-
-
-
 	@Override
 	public String toString() {
 		return "DetalleOrden [id=" + id + ", nombre=" + nombre + ", cantidad=" + cantidad + ", precio=" + precio
 				+ ", total=" + total + ", productos=" + productos + "]";
-	}
-
-
-
-
-	
+	}	
 }
