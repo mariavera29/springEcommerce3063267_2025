@@ -1,5 +1,8 @@
 package com.example.ecommerce.service;
 
-public interface IDetalleOrdenService {
+import com.example.ecommerce.model.DetalleOrden;
 
+public interface IDetalleOrdenService {
+	
+	DetalleOrden save( DetalleOrden detalleorden);
 }
