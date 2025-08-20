@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.thymeLeaf.org"><!--convertir plantilla a thymeLeaf-->
+
+
+<head th:insert="~{administrador/template_admin.html::head}"></head>
+
+<body>
+
+	<!-- ======= Header ======= -->
+	<div th:insert="~{administrador/template_admin.html::header}"></div>
+	<!-- End Header -->
+
+	<main id="main" class="main">
+
+		<div class="pagetitle">
+			<h1>Panel de Administrador</h1>
+			<nav>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item active">Dashboard</li>
+				</ol>
+			</nav>
+		</div><!-- End Page Title -->
+
+		<section class="section dashboard">
+			<p>Hola Mundo!</p>
+		</section>
+
+	</main><!-- End #main -->
+
+	<div th:insert="~{administrador/template_admin.html::footer}"></div>
+
+
+	<div th:insert="~{administrador/template_admin.html::jsfiles}"></div>
+
+
+</body>
+
+</html>
