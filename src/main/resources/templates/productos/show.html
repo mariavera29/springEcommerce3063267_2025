@@ -16,9 +16,10 @@
 				<h1>Productos</h1>
 				<nav>
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item"><a href="#">Productos</a></li>
+						<li class="breadcrumb-item"><a th:href="@{../administrador}">Home</a></li>
+						<li class="breadcrumb-item"><a th:href="@{/productos}">Productos</a></li>
 						<li class="breadcrumb-item active">Lista de Productos</li>
+		
 					</ol>
 				</nav>
 			</div><!-- End Page Title -->
@@ -30,7 +31,7 @@
 							<div class="card-body">
 								<h5 class="card-tittle">Lista de Productos</h5>
 								<p>Creacion de productos:
-									<br><a class="btn btn-primary" href="#">Crear Producto</a>
+									<br><a class="btn btn-primary" th:href="@{/productos/create}">Crear Producto</a>
 								</p>
 								
 								<table class="table datatable">
@@ -47,9 +48,9 @@
 											<td th:text="${producto.nombre}"></td>
 											<td th:text="${producto.descripcion}">></td>
 											<td th:text="${producto.cantidad}">></td>
-											<td th:text="${producto.precio}">></td>
-											<td></td>
-											<td></td>
+											<td th:text="${#strings.concat('$', #numbers.formatDecimal(producto.precio, 0, 'POINT' , 0, 'POINT'))}">></td>
+											<td><a title="Editar"class="btn btn-warning" th:href="@{productos/edit/{id} (id=${producto.id})}"><i class="bi bi-pencil-square"></i>Editar</a></td>
+											<td><a title="Eliminar"class="btn btn-danger" th:href="@{productos/delete/{id} (id=${producto.id})}"><i class="bi bi-file-earmark-x"></i>Eliminar</a></td>
 										</tr>
 									</tbody>
 								</table>
