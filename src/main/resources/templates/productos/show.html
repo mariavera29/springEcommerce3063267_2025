@@ -6,70 +6,76 @@
 
 <body>
 
-			<!-- ======= Header ======= -->
-		<div th:insert="~{administrador/template_admin.html::header}"></div>
-		<!-- End Header -->
+	<!-- ======= Header ======= -->
+	<div th:insert="~{administrador/template_admin.html::header}"></div>
+	<!-- End Header -->
 
-		<main id="main" class="main">
+	<main id="main" class="main">
 
-			<div class="pagetitle">
-				<h1>Productos</h1>
-				<nav>
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a th:href="@{../administrador}">Home</a></li>
-						<li class="breadcrumb-item"><a th:href="@{/productos}">Productos</a></li>
-						<li class="breadcrumb-item active">Lista de Productos</li>
-		
-					</ol>
-				</nav>
-			</div><!-- End Page Title -->
+		<div class="pagetitle">
+			<h1>Productos</h1>
+			<nav>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a th:href="@{../administrador}">Home</a></li>
+					<li class="breadcrumb-item"><a th:href="@{/productos}">Productos</a></li>
+					<li class="breadcrumb-item active">Lista de Productos</li>
+				</ol>
+			</nav>
+		</div><!-- End Page Title -->
 
-			<section class="section dashboard">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-tittle">Lista de Productos</h5>
-								<p>Creacion de productos:
-									<br><a class="btn btn-primary" th:href="@{/productos/create}">Crear Producto</a>
-								</p>
-								
-								<table class="table datatable">
-									<thead>
+		<section class="section dashboard">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-tittle">Lista de Productos</h5>
+							<p>Creacion de productos:
+								<br><a class="btn btn-primary" th:href="@{/productos/create}">Crear Producto</a>
+							</p>
+
+							<table class="table datatable">
+								<thead>
+									<tr>
 										<th scope="col">Nombre</th>
-										<th scope="col">Descripcion</th>
+										<th scope="col">Descripción</th>
 										<th scope="col">Cantidad</th>
 										<th scope="col">Precio</th>
-										<th scope="col">Acción</tr>
 										<th scope="col">Acción</th>
-									</thead>			
-									<tbody>
-										<tr th:each="producto:${productos}">
-											<td th:text="${producto.nombre}"></td>
-											<td th:text="${producto.descripcion}">></td>
-											<td th:text="${producto.cantidad}">></td>
-											<td th:text="${#strings.concat('$', #numbers.formatDecimal(producto.precio, 0, 'POINT' , 0, 'POINT'))}">></td>
-											<td><a title="Editar"class="btn btn-warning" th:href="@{productos/edit/{id} (id=${producto.id})}"><i class="bi bi-pencil-square"></i>Editar</a></td>
-											<td><a title="Eliminar"class="btn btn-danger" th:href="@{productos/delete/{id} (id=${producto.id})}"><i class="bi bi-file-earmark-x"></i>Eliminar</a></td>
-										</tr>
-									</tbody>
-								</table>
-								
-								
-							</div>
+										<th scope="col">Acción</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="producto:${productos}">
+										<td th:text="${producto.nombre}"></td>
+										<td th:text="${producto.descripcion}"></td>
+										<td th:text="${producto.cantidad}"></td>
+										<td th:text="${#strings.concat('$', #numbers.formatDecimal
+											(producto.precio, 0, 'POINT', 0, 'POINT'))}">
+										</td>
+										</td>
+										<td><a tittle="Editar" class="btn btn-warning"
+												th:href="@{productos/edit/{id} (id=${producto.id})}"><i
+													class="bi bi-pencil-square"></i> Editar</a></td>
+										<td><a tittle="Eliminar" class="btn btn-danger"
+												th:href="@{productos/delete/{id} (id=${producto.id})}"><i
+													class="bi bi-file-earmark-x"></i> Eliminar</a></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-		</main><!-- End #main -->
+	</main><!-- End #main -->
 
-		<div th:insert="~{administrador/template_admin.html::footer}"></div>
-
-
-		<div th:insert="~{administrador/template_admin.html::jsfiles}"></div>
+	<div th:insert="~{administrador/template_admin.html::footer}"></div>
 
 
-	</body>
+	<div th:insert="~{administrador/template_admin.html::jsfiles}"></div>
 
-	</html>
+
+</body>
+
+</html>
