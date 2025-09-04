@@ -22,7 +22,7 @@
     * Template Name: PurpleShop
     * Template URL: 
     * Updated: Jul 25 2025 with Bootstrap v5.3.3
-    * Author: Haruto Tsukasa
+    * Author: MariaV
     * License: Este proyecto está bajo la [Licencia MIT](LICENSE). Siéntete libre de usarlo y modificarlo.
     * Características:
     *   - Navbar con menú desplegable.
@@ -48,7 +48,7 @@
 	</a>
 
 	<!-- Botón de WhatsApp -->
-	<a href="https://wa.me/+573102993258" target="_blank" class="whatsapp-btn btn btn-success rounded-circle"
+	<a href="https://wa.me/+573209297401" target="_blank" class="whatsapp-btn btn btn-success rounded-circle"
 		data-bs-toggle="tooltip" data-bs-placement="left" title="Contacta con nosotros">
 		<i class="bi bi-whatsapp"></i>
 	</a>
@@ -57,7 +57,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Menú principal">
 		<div class="container">
 			<div class="logo-container">
-				<a class="navbar-brand" href="#"><img th:src="@{/assets/img/logoEcommerce.jpg}" alt="Logo Tienda"
+				<a class="navbar-brand" th:href="@{/}"><img th:src="@{/assets/img/logoEcommerce.jpg}" alt="Logo Tienda"
 						class="rounded-circle" id="fondows" width="50" height="50">&nbsp; PurpleShop</a>
 			</div>
 
@@ -68,13 +68,13 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav me-auto">
 					<li class="nav-item">
-						<a class="nav-link active" href="#">Inicio</a>
+						<a class="nav-link active" th:href="@{/}">Inicio</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#productos">Productos</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Contacto</a>
+						<a class="nav-link" th:href="@{/administrador}">Contacto</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -109,6 +109,7 @@
 			</div>
 		</div>
 	</nav>
+
 	<!-- Modal de Login -->
 	<div class="modal fade" id="loginModal" tabindex="-1">
 		<div class="modal-dialog">
@@ -172,13 +173,13 @@
 				</div>
 				<div class="col-md-3 mb-4 mb-md-0">
 					<!-- <h5>Categorías</h5>
-	                <ul class="list-unstyled">
-	                    <li class="mb-2"><a href="#">Electrónicos</a></li>
-	                    <li class="mb-2"><a href="#">Ropa</a></li>
-	                    <li class="mb-2"><a href="#">Hogar</a></li>
-	                    <li class="mb-2"><a href="#">Deportes</a></li>
-	                    <li><a href="#">Juguetes</a></li>
-	                </ul> -->
+	                    <ul class="list-unstyled">
+	                        <li class="mb-2"><a href="#">Electrónicos</a></li>
+	                        <li class="mb-2"><a href="#">Ropa</a></li>
+	                        <li class="mb-2"><a href="#">Hogar</a></li>
+	                        <li class="mb-2"><a href="#">Deportes</a></li>
+	                        <li><a href="#">Juguetes</a></li>
+	                    </ul> -->
 				</div>
 				<div class="col-md-3">
 					<h5>Síguenos</h5>
@@ -196,7 +197,7 @@
 							<button class="btn btn-light" type="button">
 								<i class="bi bi-send"></i>
 							</button>
-						</div>s
+						</div>
 					</div>
 				</div>
 			</div>
@@ -207,6 +208,7 @@
 		</div>
 	</footer>
 </div>
+
 
 <div th:fragment="jsFiles">
 	<!-- Bootstrap JS -->
