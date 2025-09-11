@@ -10,8 +10,6 @@
 	<div th:insert="~{administrador/template_admin.html::header}"></div>
 	<!-- End Header -->
 
-	<div th:insert="~{administrador/template_admin.html::aside}"></div>
-
 	<main id="main" class="main">
 
 		<div class="pagetitle">
@@ -19,7 +17,7 @@
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a th:href="@{/administrador}">Home</a></li>
-					<li class="breadcrumb-item active">Adminsitrador</li>
+					<li class="breadcrumb-item active">Administrador</li>
 				</ol>
 			</nav>
 		</div><!-- End Page Title -->
@@ -31,7 +29,7 @@
 						<img th:src="@{/images/{img} (img=${producto.imagen})}" class="card-img-top"
 							th:alt="${producto.nombre}">
 						<div class="card-body">
-							<h5 class="card-tittle" th:text="${producto.nombre}"></h5>
+							<h5 class="card-title" th:text="${producto.nombre}"></h5>
 							<p class="card-text" th:text="${producto.descripcion}"></p>
 						</div>
 					</div>
@@ -41,11 +39,11 @@
 
 	</main><!-- End #main -->
 
-	<div th:insert="~{administrador/template_admin.html::footer}"></div>
+	<!-- ======= Footer ======= -->
+	<div th:insert="~{administrador/template_admin.html::footer}"></div>>
 
-
-	<div th:insert="~{administrador/template_admin.html::jsfiles}"></div>
-
+	<!-- Vendor JS Files -->
+	<div th:insert="~{administrador/template_admin.html::jsFiles}"></div>
 
 </body>
 

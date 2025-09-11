@@ -44,12 +44,14 @@
 									<td th:text="${#strings.concat('$', #numbers.formatDecimal
 										(dorden.precio, 0, 'POINT', 0, 'POINT'))}">
 									</td>
-									<td th:text="${dorden.cantidad}"></td>
+									<td th:text="${#strings.concat(#numbers.formatDecimal
+										(dorden.cantidad, 0, 'POINT', 0, 'POINT'))}">
+									</td>
 									<td th:text="${#strings.concat('$', #numbers.formatDecimal
 										(dorden.total, 0, 'POINT', 0, 'POINT'))}">
 									</td>
 									<td>
-										<a th:href="@{/delete/cart/{id} (id=${dorden.productos.id})}"
+										<a th:href="@{/delete/cart/{id} (id=${dorden.producto.id})}"
 											class="btn btn-danger">Quitar</a>
 									</td>
 								</tr>
@@ -64,7 +66,7 @@
 									(orden.total, 0, 'POINT', 0, 'POINT'))}">
 								</h5>
 							</li>
-							<a th:href="@{/orden}" class="btn btn-dark">Ver Orden</a>
+							<a th:href="@{/orden}" class="btn btn-secondary">Ver Orden</a>
 						</ul>
 					</div>
 				</div>

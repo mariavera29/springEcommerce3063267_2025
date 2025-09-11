@@ -13,20 +13,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.ecommerce.model.Producto;
 import com.example.ecommerce.service.IProductoService;
 
+
+
+// decirle a la clase que es de tipo controlador
 @Controller
-@RequestMapping("/administrador")
+@RequestMapping("/administrador") // solicitud de mapeo al directorio administrador
 public class AdministradorController {
-	// instance LOGGER-
+
+	// instancia LOGGER
 	private final Logger LOGGER = (Logger) LoggerFactory.getLogger(ProductoController.class);
+
 	@Autowired
 	private IProductoService productoservice;
 
 	@GetMapping("")
-	public String home(Model model) {// solicitud del mapeo al directorio administrador
+	public String home(Model model) {
 		List<Producto> productos = productoservice.findAll();
 		model.addAttribute("productos", productos);
 		return "administrador/home";
-
 	}
 
 }

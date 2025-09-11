@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="es" xmlns="http://www.thymeLeaf.org">
+<html lang="es" xmlns:th="http://thymeLeaf.org">
 
-<head th:insert="~{usuario/template_user.html::head}">
-
-</head>
+<head th:insert="~{usuario/template_user.html::head}"></head>
 
 <body>
+
 	<div th:insert="~{usuario/template_user.html::headerLogout}"></div>
 
 	<!-- Hero Section -->
@@ -14,12 +13,15 @@
 			<h1 class="display-4 fw-bold mb-4">Bienvenido a PurpleShop</h1>
 			<p class="lead mb-5">Encuentra los mejores productos al mejor precio</p>
 			<div class="search-container">
-				<div class="input-group">
-					<input type="text" class="form-control form-control-lg" placeholder="Buscar productos...">
-					<button id="searchToggle" class="btn btn-light" type="button" data-bs-toggle="tooltip"
-						data-bs-placement="bottom" title="Buscar">
-						<i class="bi bi-search"></i>
-					</button>
+				<div>
+					<form class="d-flex" method="post" th:action="@{/search}">
+						<input id="nombre" name="nombre" type="text" class="form-control"
+							placeholder="Buscar productos..." autocomplete="off">
+						<button id="searchToggle" class="btn btn-info" type="submit" data-bs-toggle="tooltip"
+							data-bs-placement="bottom" title="Buscar">
+							<i class="bi bi-search"></i>
+						</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -80,16 +82,16 @@
 		<div class="row g-4">
 			<div class="col-md-6 col-lg-3" th:each="producto: ${productos}">
 				<div class="card product-card">
-					<img th:src="@{/images/{img} (img=${producto.imagen})}" class="card-img-top"
-						th:alt="${producto.imagen}">
+					<img th:src="@{/images/{img} (img=${producto.imagen})}" th:alt="${producto.imagen}"
+						class="card-img-top">
 					<div class="card-body">
 						<h5 class="card-title" th:text="${producto.nombre}"></h5>
 						<p class="card-text" th:text="${producto.descripcion}"></p>
-						<p class="h5 text-primary"
-							th:text="${#strings.concat('$', #numbers.formatDecimal (producto.precio, 0, 'POINT', 0, 'POINT'))}">
+						<p class="h5 text-primary" th:text="${#strings.concat('$', #numbers.formatDecimal
+							(producto.precio, 0, 'POINT', 0, 'POINT'))}">
 						</p>
 						<a class="btn btn-primary w-100" th:href="@{/productohome/{id} (id=${producto.id})}">
-							<i class="bi bi-cart-plus me-1"></i> Ver producto :p
+							<i class="bi bi-cart-plus me-1"></i> Ver producto
 						</a>
 					</div>
 				</div>
@@ -97,13 +99,9 @@
 		</div>
 	</section>
 
-
-
-	<!-- Footer -->
 	<div th:insert="~{usuario/template_user.html::footer}"></div>
 
 	<div th:insert="~{usuario/template_user.html::jsFiles}"></div>
-
 </body>
 
 </html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.sena.ecommerce.service.IProductoService"/>
+    <fullyQualifiedTypeName name="com.sena.ecommerce.service.UploadFileService"/>
+    <fullyQualifiedTypeName name="com.sena.ecommerce.model.Producto"/>
+    <fullyQualifiedTypeName name="com.sena.ecommerce.model.Usuario"/>
+</qualifiedTypeNameHistroy>

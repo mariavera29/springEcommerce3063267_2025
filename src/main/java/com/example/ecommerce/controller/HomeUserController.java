@@ -1,9 +1,10 @@
 package com.example.ecommerce.controller;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.ecommerce.model.DetalleOrden;
 import com.example.ecommerce.model.Orden;
 import com.example.ecommerce.model.Producto;
+import com.example.ecommerce.model.Usuario;
 import com.example.ecommerce.service.IDetalleOrdenService;
 import com.example.ecommerce.service.IOrdenService;
 import com.example.ecommerce.service.IProductoService;
@@ -86,11 +88,11 @@ public class HomeUserController {
 		detaorden.setPrecio(p.getPrecio());
 		detaorden.setNombre(p.getNombre());
 		detaorden.setTotal(p.getPrecio() * cantidad);
-		detaorden.setProductos(p);
+		detaorden.setProducto(p);
 		// validacion para evitar duplicados de productos
 		Integer idProducto = p.getId();
 		// funcion lamda stream y funcion anonima con predicado anyMatch
-		boolean insertado = detalles.stream().anyMatch(prod -> prod.getProductos().getId() == idProducto);
+		boolean insertado = detalles.stream().anyMatch(prod -> prod.getProducto().getId() == idProducto);
 		// si no es true añade el producto a la lista
 		if (!insertado) {
 			detalles.add(detaorden);
@@ -113,7 +115,7 @@ public class HomeUserController {
 		List<DetalleOrden> ordenesNuevas = new ArrayList<DetalleOrden>();
 		// quitar un objeto de la lista de detalleOrden
 		for (DetalleOrden detalleOrden : detalles) {
-			if (detalleOrden.getProductos().getId() != id) {
+			if (detalleOrden.getProducto().getId() != id) {
 				ordenesNuevas.add(detalleOrden);
 			}
 		}
@@ -127,6 +129,67 @@ public class HomeUserController {
 		model.addAttribute("cart", detalles);
 		model.addAttribute("orden", orden);
 		return "usuario/carrito";
+	}
+
+	// metodo para redirigir al carrito de compras sin productos
+	@GetMapping("/getCart")
+	public String getCart(Model model) {
+		model.addAttribute("cart", detalles);
+		model.addAttribute("orden", orden);
+		return "/usuario/carrito";
+	}
+
+	// metodo para redirigir a la vista del resumen de la orden
+	@GetMapping("/orden")
+	public String orden(Model model) {
+		Usuario u = usuarioService.findById(2).get();
+		model.addAttribute("cart", detalles);
+		model.addAttribute("orden", orden);
+		model.addAttribute("usuario", u);
+		return "usuario/resumenorden";
+	}
+
+	// metodo que genera la orden y los detalles de la orden
+	@GetMapping("/saveOrder")
+	public String saveOrder() {
+		Date fechacreacion = new Date();
+		orden.setFechacreacion(fechacreacion);
+		orden.setNumero(ordenService.generarNumeroOrden());
+		Usuario u = usuarioService.findById(2).get();
+		orden.setUsuario(u);
+		ordenService.save(orden);
+		// guardar detalles de la orden
+		for (DetalleOrden dt : detalles) {
+			dt.setOrden(orden);
+			detalleOrdenService.save(dt);
+			// descuento de cantidad de produto comprada del stock del producto
+			Producto p = dt.getProducto();
+			int cantComprada = dt.getCantidad().intValue();// conversion double a int
+			if (p.getCantidad() >= cantComprada) {
+				p.setCantidad(p.getCantidad() - cantComprada);
+				productoService.update(p);
+			} else {
+				throw new IllegalStateException("Stock insuficiente para el producto: " + p.getNombre());
+			}
+
+		}
+		// limpiar los valores que no se añadan a la siguiente orden o a la orden recien
+		// guardada
+		orden = new Orden();
+		detalles.clear();
+		return "redirect:/";
+	}
+
+	// metodo post para buscar productos de la vista principal o home de usuarios
+	@PostMapping("/search")
+	public String searchProducto(@RequestParam String nombre, Model model) {
+		LOGGER.warn("nombre del producto: {}", nombre);
+		List<Producto> productos = productoService.findAll().stream()
+				.filter(p -> p.getNombre().toUpperCase().contains(nombre.toUpperCase())
+						|| p.getDescripcion().toUpperCase().contains(nombre.toUpperCase()))
+				.collect(Collectors.toList());
+		model.addAttribute("productos", productos);
+		return "usuario/home";
 	}
 
 }

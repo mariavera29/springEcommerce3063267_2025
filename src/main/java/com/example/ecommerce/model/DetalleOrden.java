@@ -7,9 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-
 @Entity
-@Table(name = "detalle")
+@Table(name = "detalles")
 public class DetalleOrden {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,16 +17,15 @@ public class DetalleOrden {
 	private Double cantidad;
 	private Double precio;
 	private Double total;
-	
+
 	@ManyToOne
 	private Orden orden;
-	
+
 	@ManyToOne
-	private Producto productos;
-	
-	//constructor vacio
+	private Producto producto;
+
 	public DetalleOrden() {
-	
+
 	}
 
 	public DetalleOrden(Integer id, String nombre, Double cantidad, Double precio, Double total) {
@@ -39,37 +37,30 @@ public class DetalleOrden {
 		this.total = total;
 	}
 
-
-
-
 	public Integer getId() {
 		return id;
 	}
-
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-
 	public String getNombre() {
 		return nombre;
 	}
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
 	public Double getCantidad() {
 		return cantidad;
 	}
 
-
 	public void setCantidad(Double cantidad) {
 		this.cantidad = cantidad;
 	}
+
 	public Double getPrecio() {
 		return precio;
 	}
@@ -85,21 +76,27 @@ public class DetalleOrden {
 	public void setTotal(Double total) {
 		this.total = total;
 	}
+
 	public Orden getOrden() {
 		return orden;
 	}
+
 	public void setOrden(Orden orden) {
 		this.orden = orden;
 	}
-	public Producto getProductos() {
-		return productos;
+
+	public Producto getProducto() {
+		return producto;
 	}
-	public void setProductos(Producto productos) {
-		this.productos = productos;
+
+	public void setProducto(Producto producto) {
+		this.producto = producto;
 	}
+
 	@Override
 	public String toString() {
 		return "DetalleOrden [id=" + id + ", nombre=" + nombre + ", cantidad=" + cantidad + ", precio=" + precio
-				+ ", total=" + total + ", productos=" + productos + "]";
-	}	
+				+ ", total=" + total + "]";
+	}
+
 }

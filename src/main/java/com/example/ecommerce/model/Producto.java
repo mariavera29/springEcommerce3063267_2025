@@ -7,24 +7,25 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-//anotaciones jpa
 @Entity
-@Table(name="productos")
+@Table(name = "productos")
 public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nombre;
 	private String descripcion;
-	private String imagen; //null >>>default.jpg
+	private String imagen; // null >>> default.jpg
 	private Double precio;
 	private Integer cantidad;
-	
+
 	@ManyToOne
 	private Usuario usuario;
+
 	public Producto() {
-		
+
 	}
+
 	public Producto(Integer id, String nombre, String descripcion, String imagen, Double precio, Integer cantidad,
 			Usuario usuario) {
 		super();
@@ -98,5 +99,5 @@ public class Producto {
 		return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagen=" + imagen
 				+ ", precio=" + precio + ", cantidad=" + cantidad + "]";
 	}
-	
+
 }
