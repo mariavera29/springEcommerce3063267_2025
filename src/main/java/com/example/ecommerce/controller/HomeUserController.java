@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,8 @@ import com.example.ecommerce.service.IDetalleOrdenService;
 import com.example.ecommerce.service.IOrdenService;
 import com.example.ecommerce.service.IProductoService;
 import com.example.ecommerce.service.IUsuarioService;
+
+import jakarta.servlet.http.HttpSession;
 
 
 @Controller
@@ -53,8 +56,11 @@ public class HomeUserController {
 	Orden orden = new Orden();
 
 	@GetMapping("")
-	public String home(Model model) {
+	public String home(Model model, HttpSession session) {
+		LOGGER.warn("sesion de usuario: {}", session.getAttribute("idUsuario"));
 		model.addAttribute("productos", productoService.findAll());
+		
+		model.addAttribute("session", productoService.findAll());
 		return "usuario/home";
 	}
 
@@ -141,8 +147,8 @@ public class HomeUserController {
 
 	// metodo para redirigir a la vista del resumen de la orden
 	@GetMapping("/orden")
-	public String orden(Model model) {
-		Usuario u = usuarioService.findById(2).get();
+	public String orden(Model model, HttpSession session) {
+		Usuario u = usuarioService.findById(Integer.parseInt(session.getAttribute("idUsuario").toString())).get();
 		model.addAttribute("cart", detalles);
 		model.addAttribute("orden", orden);
 		model.addAttribute("usuario", u);
@@ -151,11 +157,11 @@ public class HomeUserController {
 
 	// metodo que genera la orden y los detalles de la orden
 	@GetMapping("/saveOrder")
-	public String saveOrder() {
+	public String saveOrder(HttpSession session) {
 		Date fechacreacion = new Date();
 		orden.setFechacreacion(fechacreacion);
 		orden.setNumero(ordenService.generarNumeroOrden());
-		Usuario u = usuarioService.findById(2).get();
+		Usuario u = usuarioService.findById(Integer.parseInt(session.getAttribute("idUsuario").toString())).get();
 		orden.setUsuario(u);
 		ordenService.save(orden);
 		// guardar detalles de la orden
@@ -179,17 +185,13 @@ public class HomeUserController {
 		detalles.clear();
 		return "redirect:/";
 	}
-
-	// metodo post para buscar productos de la vista principal o home de usuarios
+	//metodo post para buscar productos del a vista principal o home de usuarios
 	@PostMapping("/search")
 	public String searchProducto(@RequestParam String nombre, Model model) {
 		LOGGER.warn("nombre del producto: {}", nombre);
-		List<Producto> productos = productoService.findAll().stream()
-				.filter(p -> p.getNombre().toUpperCase().contains(nombre.toUpperCase())
-						|| p.getDescripcion().toUpperCase().contains(nombre.toUpperCase()))
-				.collect(Collectors.toList());
-		model.addAttribute("productos", productos);
-		return "usuario/home";
+		List<Producto> productos = productoService.findAll().stream().filter(p -> p.getNombre().toUpperCase().contains(nombre.toUpperCase()) ).collect(Collectors.toList());
+		model.addAttribute("productos", productos );
+		return"usuario/home";
 	}
 
 }

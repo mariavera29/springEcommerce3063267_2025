@@ -99,6 +99,56 @@
 		</div>
 	</section>
 
+	<!-- Formulario de Contacto -->
+	<section class="container mb-5">
+		<h2 class="section-title">Contáctanos</h2>
+		<div class="row">
+			<div class="col-md-6">
+				<form>
+					<div class="mb-3">
+						<label for="name" class="form-label">Nombre</label>
+						<input type="text" class="form-control" id="name" placeholder="Tu nombre completo" required>
+					</div>
+					<div class="mb-3">
+						<label for="email" class="form-label">Email</label>
+						<input type="email" class="form-control" id="email" placeholder="tucorreo@ejemplo.com" required>
+					</div>
+					<div class="mb-3">
+						<label for="subject" class="form-label">Asunto</label>
+						<input type="text" class="form-control" id="subject" placeholder="Asunto del mensaje" required>
+					</div>
+					<div class="mb-3">
+						<label for="message" class="form-label">Mensaje</label>
+						<textarea class="form-control" id="message" rows="4" placeholder="Escribe tu mensaje aquí..."
+							required></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<div class="card h-100">
+					<div class="card-body">
+						<h5 class="card-title">Información de Contacto</h5>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">
+								<i class="bi bi-geo-alt me-2"></i> Calle Principal 123, Ciudad
+							</li>
+							<li class="list-group-item">
+								<i class="bi bi-telephone me-2"></i> +57 311 555 00 57
+							</li>
+							<li class="list-group-item">
+								<i class="bi bi-envelope me-2"></i> info@purpleshop.com
+							</li>
+							<li class="list-group-item">
+								<i class="bi bi-clock me-2"></i> Lunes a Viernes: 9:00 - 18:00
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<div th:insert="~{usuario/template_user.html::footer}"></div>
 
 	<div th:insert="~{usuario/template_user.html::jsFiles}"></div>
