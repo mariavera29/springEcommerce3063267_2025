@@ -5,7 +5,8 @@
 
 <body>
 
-	<div th:insert="~{usuario/template_user.html::headerLogout}"></div>
+	<div th:insert="~{usuario/template_user.html::headerLogout}" th:if="${sesion == null}"></div>
+	<div th:insert="~{usuario/template_user.html::headerLogin}" th:unless="${sesion == null}"></div>
 
 	<!-- Hero Section -->
 	<!--	<section class="hero-section">-->
@@ -21,8 +22,8 @@
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
-				<li class="breadcrumb-item"><a th:href="@{/usuario/compras}">Compra</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Detalles</i>
+				<li class="breadcrumb-item"><a th:href="@{/usuario/compras}">Compras</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Detalles</li>
 			</ol>
 		</nav>
 		<div class="card mb-4">
@@ -39,16 +40,16 @@
 								</tr>
 							</thead>
 							<tbody>
-						<tr th:each="detalle:${detalles}">
-						<td th:text="${detalle.cantidad}"></td>
-						<td th:text="${detalle.nombre}"></td>
-						<td th:text="${#strings.concat('$', #numbers.formatDecimal
-						(detalle.precio, 0, 'POINT', 0, 'POINT'))}">
-						</td>
-						<td th:text="${#strings.concat('$', #numbers.formatDecimal
-						(detalle.total, 0, 'POINT', 0, 'POINT'))}"></td>
-						</tr>
-						</tbody>
+								<tr th:each="detalle:${detalles}">
+									<td th:text="${detalle.cantidad}"></td>
+									<td th:text="${detalle.nombre}"></td>
+									<td th:text="${#strings.concat('$', #numbers.formatDecimal
+										(detalle.precio, 0, 'POINT', 0, 'POINT'))}">
+									</td>
+									<td th:text="${#strings.concat('$', #numbers.formatDecimal
+										(detalle.total, 0, 'POINT', 0, 'POINT'))}"></td>
+								</tr>
+							</tbody>
 						</table>
 					</div>
 				</div>

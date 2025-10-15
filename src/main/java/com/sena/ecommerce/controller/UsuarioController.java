@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +32,9 @@ public class UsuarioController {
 
 	@Autowired
 	private IOrdenService ordenService;
+	
+	BCryptPasswordEncoder pe = new BCryptPasswordEncoder();
+	
 
 	@GetMapping("/registro")
 	public String createUser() {
@@ -41,6 +45,7 @@ public class UsuarioController {
 	public String save(Usuario usuario, Model model) {
 		LOGGER.warn("Usuario a registrar: {}", usuario);
 		usuario.setTipo("USER");
+		usuario.setPassword(pe.encode(usuario.getPassword()));
 		usuarioService.save(usuario);
 		return "redirect:/";
 	}
@@ -49,20 +54,21 @@ public class UsuarioController {
 	public String login() {
 		return "usuario/login";
 	}
-
-	@PostMapping("/acceder")
+	
+	@GetMapping("/acceder")
 	public String acceder(Usuario usuario, HttpSession session) {
 		LOGGER.warn("Accesos: {}", usuario);
 		// acceder a la DB para validar
-		Optional<Usuario> userEmail = usuarioService.findByEmail(usuario.getEmail());
+		// Optional<Usuario> userEmail = usuarioService.findByEmail(usuario.getEmail());
+		Optional<Usuario> user = usuarioService.findById(Integer.parseInt(session.getAttribute("idUsuario").toString()));
 		// LOGGER.warn("Usuario obtenido de la DB: {}", userEmail.get());
 		// condicion temporal sin spring security
-		if (userEmail.isPresent()) {
-			LOGGER.warn("Usuario obtenido de la DB: {}", userEmail.get());
+		if (user.isPresent()) {
+			LOGGER.warn("Usuario obtenido de la DB: {}", user.get());
 			// id del usuario encontrado
-			session.setAttribute("idUsuario", userEmail.get().getId());
+			session.setAttribute("idUsuario", user.get().getId());
 			// validacion tipo de usuario
-			if (userEmail.get().getTipo().equals("ADMIN")) {
+			if (user.get().getTipo().equals("ADMIN")) {
 				return "redirect:/administrador";
 			} else {
 				return "redirect:/";
@@ -77,7 +83,7 @@ public class UsuarioController {
 	@GetMapping("/compras")
 	public String compras(Model model, HttpSession session) {
 		// sesion de usuario o el idUsuario objeto de session
-		model.addAttribute("session", session.getAttribute("idUsuario"));
+		model.addAttribute("sesion", session.getAttribute("idUsuario"));
 		Usuario u = usuarioService.findById(Integer.parseInt(session.getAttribute("idUsuario").toString())).get();
 		List<Orden> ordenes = ordenService.findByUsuario(u);
 		model.addAttribute("ordenes", ordenes);
@@ -87,15 +93,17 @@ public class UsuarioController {
 	@GetMapping("/detalle/{id}")
 	public String detalleCompra(@PathVariable Integer id, Model model, HttpSession session) {
 		// sesion de usuario o el idUsuario objeto de session
-		model.addAttribute("session", session.getAttribute("idUsuario"));
+		model.addAttribute("sesion", session.getAttribute("idUsuario"));
 		LOGGER.warn("id de la orden: {}", id);
 		Optional<Orden> orden = ordenService.findById(id);
-		model.addAttribute("detalles",orden.get().getDetalle());
+		model.addAttribute("detalles", orden.get().getDetalle());
 		return "usuario/detallecompra";
 	}
+
 	@GetMapping("/cerrar")
 	public String cerrarSesion(HttpSession session) {
 		session.removeAttribute("idUsuario");
-		return"/redirect:/";
+		return "redirect:/";
 	}
+
 }

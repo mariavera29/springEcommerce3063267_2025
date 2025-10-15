@@ -5,7 +5,8 @@
 
 <body>
 
-	<div th:insert="~{usuario/template_user.html::headerLogout}"></div>
+	<div th:insert="~{usuario/template_user.html::headerLogout}" th:if="${sesion == null}"></div>
+	<div th:insert="~{usuario/template_user.html::headerLogin}" th:unless="${sesion == null}"></div>
 
 	<!-- Hero Section -->
 	<!--	<section class="hero-section">-->
@@ -70,7 +71,7 @@
 							</div>
 							<div class="row mb-3">
 								<div class="col-md-6">
-									<label for="document" class="form-label">Teléfono</label>
+									<label for="phone" class="form-label">Teléfono</label>
 									<input type="text" class="form-control" id="telefono" name="telefono"
 										placeholder="Tu teléfono" required autocomplete="off">
 								</div>

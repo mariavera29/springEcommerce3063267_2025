@@ -5,11 +5,12 @@
 
 <body>
 
-	<div th:insert="~{usuario/template_user.html::headerLogout}"></div>
+	<div th:insert="~{usuario/template_user.html::headerLogout}" th:if="${sesion == null}"></div>
+	<div th:insert="~{usuario/template_user.html::headerLogin}" th:unless="${sesion == null}"></div>
 
 	<!-- Hero Section -->
-<!--	<section class="hero-section">-->
-<!--	</section>-->
+	<!--	<section class="hero-section">-->
+	<!--	</section>-->
 
 	<!-- Carrusel de Promociones -->
 	<section class="container mb-5">

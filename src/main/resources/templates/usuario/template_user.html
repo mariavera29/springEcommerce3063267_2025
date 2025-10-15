@@ -22,7 +22,7 @@
     * Template Name: PurpleShop
     * Template URL: 
     * Updated: Jul 25 2025 with Bootstrap v5.3.3
-    * Author: Haruto Tsukasa
+    * Author: maria vera
     * License: Este proyecto está bajo la [Licencia MIT](LICENSE). Siéntete libre de usarlo y modificarlo.
     * Características:
     *   - Navbar con menú desplegable.
@@ -48,13 +48,13 @@
 	</a>
 
 	<!-- Botón de WhatsApp -->
-	<a href="https://wa.me/+573102993258" target="_blank" class="whatsapp-btn btn btn-success rounded-circle"
+	<a href="https://wa.me/+573209297401" target="_blank" class="whatsapp-btn btn btn-success rounded-circle"
 		data-bs-toggle="tooltip" data-bs-placement="left" title="Contacta con nosotros">
 		<i class="bi bi-whatsapp"></i>
 	</a>
 
 	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Menú principal">
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Menú principal">
 		<div class="container">
 			<div class="logo-container">
 				<a class="navbar-brand" th:href="@{/}"><img th:src="@{/assets/img/logoEcommerce.jpg}" alt="Logo Tienda"
@@ -74,7 +74,7 @@
 						<a class="nav-link" href="#productos">Productos</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" th:href="@{/administrador}">Contacto</a>
+						<a class="nav-link" href="#contactos">Contacto</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -119,10 +119,10 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				</div>
 				<div class="modal-body">
-					<form th:action="@{/usuario/acceder}" method="post">
+					<form th:action="@{/usuario/login}" method="post">
 						<div class="mb-3">
 							<label for="loginEmail" class="form-label"><i class="bi bi-envelope"></i> Email</label>
-							<input type="email" class="form-control" id="email" name="email"
+							<input type="email" class="form-control" id="username" name="username"
 								placeholder="tucorreo@ejemplo.com" required>
 						</div>
 						<div class="mb-3">
@@ -148,6 +148,79 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div th:fragment="headerLogin">
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Botón Volver Arriba -->
+	<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+		<i class="bi bi-arrow-up-short"></i>
+	</a>
+
+	<!-- Botón de WhatsApp -->
+	<a href="https://wa.me/+573209297401" target="_blank" class="whatsapp-btn btn btn-success rounded-circle"
+		data-bs-toggle="tooltip" data-bs-placement="left" title="Contacta con nosotros">
+		<i class="bi bi-whatsapp"></i>
+	</a>
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Menú principal">
+		<div class="container">
+			<div class="logo-container">
+				<a class="navbar-brand" th:href="@{/}"><img th:src="@{/assets/img/logoEcommerce.jpg}" alt="Logo Tienda"
+						class="rounded-circle" id="fondows" width="50" height="50">&nbsp; PurpleShop</a>
+			</div>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<a class="nav-link active" th:href="@{/}">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#productos">Productos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contactos">Contacto</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-bs-toggle="dropdown">
+							Categorías
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Electrónicos</a></li>
+							<li><a class="dropdown-item" href="#">Ropa</a></li>
+							<li><a class="dropdown-item" href="#">Hogar</a></li>
+							<li><a class="dropdown-item" href="#">Deportes</a></li>
+							<li><a class="dropdown-item" href="#">Juguetes</a></li>
+							<li><a class="dropdown-item" th:href="@{/usuario/compras}">Compras</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<div class="d-flex">
+					<button id="darkModeToggle" class="btn btn-outline-light rounded-circle me-2"
+						data-bs-toggle="tooltip" data-bs-placement="bottom" title="Modo Oscuro">
+						<i class="bi bi-moon"></i>
+					</button>
+					<a class="btn btn-outline-light rounded-circle me-2 cart-btn" title="Carrito" th:href="@{/getCart}">
+						<i class="bi bi-cart"></i>
+					</a>
+					<a class="btn btn-outline-light rounded-circle" title="Cerrar Sesión" th:href="@{/usuario/cerrar}">
+						<i class="bi bi-box-arrow-left"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</nav>
 </div>
 
 <div th:fragment="footer">
