@@ -1,0 +1,151 @@
+﻿id;cantidad;descripcion;imagen;nombre;precio;usuario_id
+1;44;Smartphone de gama alta con pantalla Super Retina XDR y chip A17 Bionic.;default.jpg;iPhone 15 Pro Max;1968074;1
+2;41;Teléfono con pantalla Dynamic AMOLED y cámara de 200 MP.;default.jpg;Samsung Galaxy S23 Ultra;678534;1
+3;22;Smartphone con Android puro y cámara avanzada.;default.jpg;Google Pixel 8 Pro;1726641;1
+4;34;Smartphone económico con pantalla AMOLED.;default.jpg;Xiaomi Redmi Note 12;100655;1
+5;24;Teléfono con pantalla Fluid AMOLED y carga rápida.;default.jpg;OnePlus 11;1856977;1
+6;29;Laptop ultradelgada con chip M2 y pantalla Retina.;default.jpg;MacBook Air M2;319549;1
+7;45;Laptop compacta con pantalla InfinityEdge.;default.jpg;Dell XPS 13;1341611;1
+8;35;Convertible 2 en 1 con pantalla táctil.;default.jpg;HP Spectre x360;1355948;1
+9;44;Laptop empresarial ultraligera.;default.jpg;Lenovo ThinkPad X1 Carbon;212890;1
+10;27;Laptop gaming con GPU NVIDIA RTX 3060.;default.jpg;Asus ROG Zephyrus G14;1889320;1
+11;48;Tablet con pantalla Liquid Retina XDR y chip M2.;default.jpg;"iPad Pro 12.9""";1954873;1
+12;42;"Tablet con pantalla AMOLED de 14.6"" y S Pen.";default.jpg;Samsung Galaxy Tab S8 Ultra;463906;1
+13;42;Tablet convertible con Windows 11.;default.jpg;Microsoft Surface Pro 9;1393187;1
+14;34;Tablet económica con pantalla Full HD.;default.jpg;Amazon Fire HD 10;334355;1
+15;37;Tablet con pantalla 2K y soporte para lápiz óptico.;default.jpg;Huawei MatePad Pro;1632263;1
+16;36;Cargador Qi compatible con dispositivos Samsung.;default.jpg;Cargador inalámbrico Samsung;465445;1
+17;39;Funda protectora de silicona.;default.jpg;Funda para iPhone 15;1828636;1
+18;12;Batería portátil con carga rápida.;default.jpg;Power Bank Anker 20000mAh;680839;1
+19;13;Soporte universal para escritorio o coche.;default.jpg;Soporte para teléfono;297786;1
+20;17;Vidrio templado para protección contra rayones.;default.jpg;Protector de pantalla;416654;1
+21;18;Auriculares inalámbricos con cancelación de ruido.;default.jpg;AirPods Pro (2ª generación);819695;1
+22;6;Auriculares over-ear con cancelación de ruido líder.;default.jpg;Sony WH-1000XM5;665571;1
+23;39;Altavoz Bluetooth portátil y resistente al agua.;default.jpg;JBL Flip 6;345006;1
+24;41;Auriculares true wireless con sonido Hi-Res.;default.jpg;Soundcore Liberty 4;880553;1
+25;28;Micrófono USB para streaming y grabación.;default.jpg;Micrófono Blue Yeti;513507;1
+26;14;Reloj inteligente con monitor de salud y GPS.;default.jpg;Apple Watch Series 9;814923;1
+27;27;Smartwatch con pantalla AMOLED y seguimiento avanzado.;default.jpg;Samsung Galaxy Watch 6;1440022;1
+28;21;Pulsera de actividad con monitor de frecuencia cardíaca.;default.jpg;Fitbit Charge 5;767316;1
+29;48;Reloj para corredores con métricas avanzadas.;default.jpg;Garmin Forerunner 245;1417150;1
+30;31;Pulsera económica con pantalla AMOLED.;default.jpg;Xiaomi Mi Band 7;1971672;1
+31;30;Cámara mirrorless full-frame con grabación 8K.;default.jpg;Canon EOS R5;1922188;1
+32;42;Cámara mirrorless con sensor de 33 MP.;default.jpg;Sony Alpha 7 IV;19176;1
+33;36;Dron con cámara Hasselblad.;default.jpg;DJI Mavic 3;1539168;1
+34;21;Cámara de acción con estabilización HyperSmooth 5.0.;default.jpg;GoPro Hero 11 Black;461417;1
+35;32;Cámara mirrorless con doble slot para tarjetas.;default.jpg;Nikon Z6 II;945150;1
+36;22;Consola de última generación con gráficos 4K.;default.jpg;PlayStation 5;989524;1
+37;42;Consola con soporte para 4K y 120 FPS.;default.jpg;Xbox Series X;1213408;1
+38;13;Consola híbrida con pantalla OLED mejorada.;default.jpg;Nintendo Switch OLED;652152;1
+39;30;Consola portátil para juegos de PC.;default.jpg;Steam Deck;861269;1
+40;16;Teclado mecánico para gaming con switches intercambiables.;default.jpg;Logitech G Pro X;1955419;1
+41;19;Monitor gaming 4K con 144Hz.;default.jpg;LG UltraGear 27GP950;1300506;1
+42;48;Monitor curvo ultrawide con resolución QHD.;default.jpg;Samsung Odyssey G9;910284;1
+43;43;Monitor 4K con precisión de color para diseño.;default.jpg;Dell UltraSharp U2723QE;409725;1
+44;47;Monitor gaming WQHD con 165Hz.;default.jpg;Asus ROG Swift PG279Q;515081;1
+45;34;Monitor curvo Full HD con 240Hz.;default.jpg;AOC C27G2ZE;326509;1
+46;42;Disco sólido NVMe con velocidades de hasta 3500 MB/s.;default.jpg;SSD Samsung 970 EVO Plus 1TB;1010118;1
+47;17;Disco duro portátil con USB 3.0.;default.jpg;WD My Passport 2TB;1130529;1
+48;39;Tarjeta de memoria para cámaras y drones.;default.jpg;SanDisk Extreme Pro SDXC 128GB;40608;1
+49;46;Disco duro interno para PC y servidores.;default.jpg;Seagate BarraCuda 4TB;179778;1
+50;14;Disco duro resistente a golpes y agua.;default.jpg;LaCie Rugged Mini 1TB;1580169;1
+51;23;Router Wi-Fi 6 con doble banda.;default.jpg;Router ASUS RT-AX88U;1138942;1
+52;47;Sistema Mesh Wi-Fi 6 para cobertura en toda la casa.;default.jpg;TP-Link Deco X90;164319;1
+53;12;Router gaming con Wi-Fi 6 y 12 streams.;default.jpg;Netgear Nighthawk AX12;1154607;1
+54;25;Sistema Mesh con asistente de Google integrado.;default.jpg;Google Nest Wifi;521416;1
+55;22;Router todo en uno para redes profesionales.;default.jpg;Ubiquiti UniFi Dream Machine;996412;1
+56;27;Impresora láser multifunción con Wi-Fi.;default.jpg;HP LaserJet Pro MFP M428fdw;1909499;1
+57;46;Impresora de tanque de tinta con bajo costo por página.;default.jpg;Epson EcoTank ET-4760;284060;1
+58;13;Impresora fotográfica de 6 tintas.;default.jpg;Canon PIXMA TS9120;1334245;1
+59;9;Impresora láser monocromática con Wi-Fi.;default.jpg;Brother HL-L2350DW;188107;1
+60;47;Escáner de documentos con alimentación automática.;default.jpg;Fujitsu ScanSnap iX1500;1136583;1
+61;35;Suscripción anual para Word,  Excel y PowerPoint.;default.jpg;Microsoft Office 365;1642004;1
+62;14;Suite de diseño con Photoshop, Illustrator y Premiere Pro.;default.jpg;Adobe Creative Cloud;946978;1
+63;20;Licencia de sistema operativo para PC.;default.jpg;Windows 11 Pro;245512;1
+64;23;Suite de seguridad con VPN y protección antivirus.;default.jpg;Norton 360 Deluxe;583136;1
+65;42;Software de diseño arquitectónico y 3D.;default.jpg;AutoCAD 2024;1654392;1
+66;33;Gafas de realidad virtual con controles táctiles.;default.jpg;Meta Quest 3;1314084;1
+67;36;Kit de realidad virtual con resolución 5K.;default.jpg;HTC Vive Pro 2;113915;1
+68;18;Gafas VR compatibles con PlayStation 5.;default.jpg;PlayStation VR2;1255708;1
+69;31;Gafas de realidad aumentada para empresas.;default.jpg;Microsoft HoloLens 2;1461487;1
+70;34;Kit VR con seguimiento de movimiento avanzado.;default.jpg;Valve Index;509756;1
+71;46;Altavoz inteligente con Alexa.;default.jpg;Amazon Echo Dot (5ª generación);1305787;1
+72;16;Pantalla inteligente con asistente de Google.;default.jpg;Google Nest Hub;1501804;1
+73;34;Kit de luces inteligentes controlables por app.;default.jpg;Philips Hue Starter Kit;1219320;1
+74;28;Robot aspirador con base de autovaciado.;default.jpg;Roomba i7+;1812859;1
+75;18;Termostato inteligente con ahorro de energía.;default.jpg;Nest Thermostat;1810685;1
+76;43;Tarjeta gráfica para gaming y renderizado 3D.;default.jpg;NVIDIA GeForce RTX 4090;1965200;1
+77;42;Procesador de 16 núcleos para alto rendimiento.;default.jpg;AMD Ryzen 9 7950X;1600258;1
+78;13;Memoria RAM DDR4 con iluminación RGB.;default.jpg;Corsair Vengeance RGB Pro 32GB;865591;1
+79;33;Disipador de CPU para overclocking.;default.jpg;Cooler Master Hyper 212;1641204;1
+80;45;Fuente de poder 80 Plus Gold.;default.jpg;EVGA SuperNOVA 850 G6;1222773;1
+81;45;Soporta 4K a 120Hz y 8K.;default.jpg;Cable HDMI 2.1;1640847;1
+82;7;Convierte USB-C a salida HDMI.;default.jpg;Adaptador USB-C a HDMI;994712;1
+83;22;Cable de red para alta velocidad y baja latencia.;default.jpg;Cable Ethernet Cat 8;577345;1
+84;27;Cargador rápido para laptops y smartphones.;default.jpg;Cargador USB-C de 65W;1894027;1
+85;11;Incluye HDMI, USB-A y lectores de tarjetas.;default.jpg;Hub USB-C de 7 en 1;941707;1
+86;46;Pantalla inteligente con cámara móvil.;default.jpg;Amazon Echo Show 10;1789132;1
+87;32;Altavoz inteligente con sonido de alta calidad.;default.jpg;Google Nest Audio;767224;1
+88;44;Altavoz inteligente con soporte para Alexa y Google Assistant.;default.jpg;Sonos One (Gen 2);460985;1
+89;27;Altavoz Bluetooth 360° con sonido envolvente.;default.jpg;Bose SoundLink Revolve;1428426;1
+90;14;Ratón ergonómico para productividad.;default.jpg;Logitech MX Master 3;1716422;1
+91;24;Ratón gaming con sensor óptico de 20000 DPI.;default.jpg;Razer DeathAdder V2;678496;1
+92;30;Teclado gaming mecánico con iluminación RGB.;default.jpg;Corsair K95 RGB Platinum;1955066;1
+93;35;Auriculares gaming con sonido surround virtual.;default.jpg;HyperX Cloud II;1879328;1
+94;6;Auriculares inalámbricos para gaming.;default.jpg;SteelSeries Arctis 7;861955;1
+95;34;Panel de control para streamers.;default.jpg;Elgato Stream Deck;174141;1
+96;30;Gafas de realidad virtual todo en uno.;default.jpg;Oculus Quest 2;638711;1
+97;42;Gimbal estabilizador para smartphones.;default.jpg;DJI OM 5;1140580;1
+98;20;Cámara 360° para videos inmersivos.;default.jpg;GoPro MAX;1713719;1
+99;30;Cámara 360° con estabilización FlowState.;default.jpg;Insta360 ONE X2;1405823;1
+100;16;Webcam HD para videollamadas y streaming.;default.jpg;Logitech C920;309230;1
+101;19;Micrófono USB compacto para streaming.;default.jpg;Blue Yeti Nano;663446;1
+102;11;Micrófono de estudio para grabación profesional.;default.jpg;Rode NT-USB;18932;1
+103;40;Micrófono dinámico para podcasting y streaming.;default.jpg;Shure SM7B;405569;1
+104;47;Luz de estudio para streamers y creadores.;default.jpg;Elgato Key Light;1265488;1
+105;32;Paneles LED inteligentes para decoración.;default.jpg;Nanoleaf Canvas;1769696;1
+106;46;Disco duro externo portátil de 1TB con USB 3.1.;default.jpg;Seagate Backup Plus Slim;940097;1
+107;46;Auriculares inalámbricos con cancelación de ruido y sonido envolvente.;default.jpg;Sony WF-1000XM4;1348873;1
+108;7;Teclado inalámbrico compacto para dispositivos móviles.;default.jpg;Logitech K380;1321992;1
+109;29;"Monitor gaming curvo de 27"" con 240Hz.";default.jpg;Acer Predator XB273U;558806;1
+110;8;Impresora láser monocromática con Wi-Fi Direct.;default.jpg;Brother HL-L2300D;315152;1
+111;11;Cámara instantánea con impresión de fotos en segundos.;default.jpg;Fujifilm Instax Mini 11;1715518;1
+112;17;Altavoz inteligente con pantalla táctil y Alexa.;default.jpg;Echo Show 8;1244150;1
+113;47;Disco duro SSD externo de 500GB con USB-C.;default.jpg;SanDisk Extreme Portable SSD;1983619;1
+114;23;Auriculares deportivos inalámbricos resistentes al agua.;default.jpg;Jabra Elite Active 75t;862855;1
+115;21;Teclado mecánico retroiluminado para gaming.;default.jpg;Razer BlackWidow V3;556549;1
+116;40;"Monitor ultraancho de 34"" con resolución QHD.";default.jpg;LG 34WN80C-B;46066;1
+117;34;Impresora multifunción con escáner y copiadora.;default.jpg;Canon TR8620;180408;1
+118;22;Cámara de seguridad inteligente con visión nocturna.;default.jpg;Arlo Pro 4;1469882;1
+119;10;Altavoz Bluetooth portátil con luces LED.;default.jpg;JBL Pulse 4;921486;1
+120;6;Ratón inalámbrico ergonómico para oficina.;default.jpg;Microsoft Sculpt Ergonomic;1172289;1
+121;9;Disco duro SSD interno de 2TB con interfaz SATA.;default.jpg;Crucial MX500;427558;1
+122;47;Auriculares over-ear con sonido Hi-Res y cancelación de ruido.;default.jpg;Sennheiser HD 450BT;1481847;1
+123;40;Teclado inalámbrico y ratón combo para oficina.;default.jpg;Logitech MK270;261947;1
+124;15;"Monitor gaming de 32"" con resolución 4K y 144Hz.";default.jpg;Acer Nitro XV282K;1170720;1
+125;29;Impresora láser a color con Wi-Fi y duplex.;default.jpg;HP Color LaserJet Pro MFP M479fdw;162953;1
+126;12;Cámara de acción con pantalla frontal y estabilización.;default.jpg;DJI Osmo Action;1891315;1
+127;39;Altavoz inteligente con Google Assistant y Chromecast integrado.;default.jpg;Nest Mini;1492416;1
+128;29;Disco duro externo de 5TB con USB 3.0.;default.jpg;WD Elements Desktop;1454573;1
+129;10;Auriculares inalámbricos con cancelación de ruido y sonido equilibrado.;default.jpg;Bose QuietComfort Earbuds;705314;1
+130;29;Teclado mecánico compacto para gaming.;default.jpg;Ducky One 2 Mini;1962169;1
+131;13;"Monitor curvo de 27"" con resolución QHD y 165Hz.";default.jpg;MSI Optix MAG274QRF;1158300;1
+132;11;Impresora de etiquetas portátil para uso profesional.;default.jpg;Brother PT-P710BT;318213;1
+133;36;Cámara de seguridad para interiores con visión nocturna.;default.jpg;Nest Cam Indoor;1153550;1
+134;40;Altavoz Bluetooth portátil con sonido estéreo.;default.jpg;Ultimate Ears Boom 3;1852074;1
+135;44;Ratón gaming inalámbrico con sensor óptico avanzado.;default.jpg;Logitech G Pro Wireless;866692;1
+136;35;Disco duro SSD interno de 1TB con interfaz NVMe.;default.jpg;Western Digital Black SN850;1295770;1
+137;7;Auriculares over-ear con sonido envolvente y micrófono retráctil.;default.jpg;SteelSeries Arctis 5;64753;1
+138;14;Teclado inalámbrico para iPad y Mac.;default.jpg;Apple Magic Keyboard;1505245;1
+139;17;"Monitor ultraancho de 49"" con resolución QHD y 120Hz.";default.jpg;Samsung Odyssey G9;1155267;1
+140;44;Impresora láser monocromática con Wi-Fi y duplex.;default.jpg;HP LaserJet Pro M15w;618140;1
+141;48;Cámara de seguridad para exteriores con detección de movimiento.;default.jpg;Ring Spotlight Cam;555251;1
+142;21;Altavoz Bluetooth portátil con sonido potente y resistente al agua.;default.jpg;Sony SRS-XB33;1525867;1
+143;19;Ratón ergonómico inalámbrico para uso prolongado.;default.jpg;Logitech MX Vertical;1174877;1
+144;32;Disco duro SSD externo de 1TB con USB 3.2.;default.jpg;Samsung T7 Touch;1502296;1
+145;8;Auriculares inalámbricos con cancelación de ruido y sonido Hi-Res.;default.jpg;Sony WH-XB910N;1898721;1
+146;19;Teclado mecánico retroiluminado con switches Cherry MX.;default.jpg;Ducky Shine 7;1365650;1
+147;7;"Monitor gaming de 27"" con resolución QHD y 240Hz.";default.jpg;ASUS ROG Swift PG279QM;132884;1
+148;34;Impresora multifunción con escáner y fax.;default.jpg;Brother MFC-J995DW;1339220;1
+149;42;Cámara de seguridad con visión 360° y seguimiento automático.;default.jpg;Eufy Security SoloCam E40;294379;1
+150;13;Altavoz Bluetooth portátil con sonido estéreo y luces LED.;default.jpg;JBL Charge 5;433871;1
